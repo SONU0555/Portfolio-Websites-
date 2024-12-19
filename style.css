@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap");
+
+* {
+  font-family: "Protest Revolution", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --red-color: #e43c39;
+}
+body {
+  background-color: #111;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.nav-container {
+  padding: 40px 0;
+  animation: navfadup 1s ease;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+nav h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--red-color);
+  cursor: pointer;
+}
+nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu .links {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+}
+.menu .links li {
+  padding: 6px 15px;
+  border-radius: 50px;
+}
+.links .active {
+  background-color: var(--red-color);
+}
+.menu .links li a {
+  text-decoration: none;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+.menu .links li a:focus {
+  outline: none;
+}
+.menu .links a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--red-color);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: 0.3s ease;
+}
+.menu .links a:hover::before {
+  width: 100%;
+}
+nav .logorsign {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+nav .logorsign i {
+  font-size: 30px;
+  color: var(--red-color);
+}
+.logorsign .login-button {
+  border: none;
+  padding: 5px 20px;
+  font-size: 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid var(--red-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.logorsign .login-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--red-color);
+  transition: 0.3s ease;
+}
+.logorsign .login-button:hover::before {
+  width: 100%;
+}
+.logorsign span {
+  position: inherit;
+}
+.login-button:hover {
+  color: #fff;
+}
+.nav-btn {
+  color: #fff;
+  line-height: 45px;
+  font-size: 25px;
+  display: none;
+  cursor: pointer;
+}
+.active-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  flex-direction: column;
+}
+.active-nav .links {
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  margin-top: 6rem;
+  width: 100%;
+}
+.active-nav .links li {
+  margin: 0 20px;
+}
+.active-nav .logorsign {
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 10px;
+}
+.active-nav .logorsign .login-button {
+  width: 200px;
+}
+.close {
+  z-index: 100;
+}
+
+/* adding animation in top nav bar */
+@keyframes navfadup {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* styling in page content */
+.page-content {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  position: relative;
+}
+.page-content .info {
+  max-width: 600px;
+  color: #fff;
+}
+.info h3 {
+  font-size: 30px;
+  font-weight: 400;
+  animation: textfadeup 2s ease;
+}
+.info h1 {
+  font-size: 55px;
+  font-weight: 600;
+  animation: left 2s ease;
+}
+.info h1 + p {
+  font-size: 25px;
+  animation: right 2s ease;
+}
+.info h1 + p span {
+  color: var(--red-color);
+}
+.info p + p {
+  margin: 20px 0 40px;
+  letter-spacing: 0.5px;
+}
+.info .social_media {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  font-size: 25px;
+  color: var(--red-color);
+  cursor: pointer;
+}
+.social_media i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--red-color);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.social_media i:hover {
+  box-shadow: 0 0 50px 10px #f50b07;
+}
+.info .buttons {
+  display: flex;
+  gap: 50px;
+}
+.buttons .btn {
+  border: none;
+  width: 130px;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  margin-top: 20px;
+  box-shadow: 0 0 50px #f50b07;
+  background-color: #e43c39;
+  color: #fff;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.buttons .btn:focus {
+  outline: none;
+}
+.buttons .btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+.page-content .image {
+  width: 400px;
+  height: 500px;
+  margin-top: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 50px 50px 10px rgba(0, 0, 0, 0.9);
+  transition: 0.3s ease;
+}
+.page-content .image:hover {
+  box-shadow: 0 20px 100px 5px #f50b07;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* adding animation in body content */
+
+@keyframes textfadeup {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes left {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes right {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/* for desktop or max */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    margin: 0 40px;
+  }
+  .page-content {
+    position: relative;
+    gap: 0;
+  }
+  .page-content .info {
+    max-width: 500px;
+  }
+  .info h1 {
+    font-size: 50px;
+  }
+  .info h1 + p {
+    font-size: 25px;
+  }
+  .info .social_media {
+    width: 200px;
+  }
+  nav .menu {
+    display: none;
+  }
+  .nav-btn {
+    display: block;
+  }
+  .page-content .image {
+    height: 350px;
+    width: 350px;
+    margin-top: 0;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: -1;
+  }
+  .page-content .info {
+    max-width: 80%;
+    height: 50vh;
+    position: absolute;
+    top: 5rem;
+  }
+  .active-nav {
+    width: 80%;
+  }
+}
+/* Responsiveness for tabs and mobile */
+@media (max-width: 768px) {
+  body {
+    margin: 0 40px 50px;
+    position: relative;
+  }
+  nav .menu {
+    display: none;
+  }
+  .nav-btn {
+    display: block;
+  }
+  .page-content {
+    flex-direction: column-reverse;
+  }
+  .page-content .image {
+    height: 300px;
+    width: 300px;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  .page-content .info {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 10rem;
+  }
+  .info h1 {
+    font-size: 40px;
+  }
+  .info p + p {
+    text-align: justify;
+  }
+  .info .social_media {
+    width: 100%;
+  }
+  .info .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .active-nav {
+    width: 100%;
+  }
+}
